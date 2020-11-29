@@ -1,0 +1,88 @@
+.Weather {
+  background-color: #d4e4e3;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #403c3c;
+}
+
+.Weather input {
+  display: block;
+  margin: 0 auto;
+  margin-top: 30px;
+  width: 300px;
+  height: 30px;
+  text-align: center;
+}
+
+h3 {
+  padding-top: 8%;
+  margin-bottom: auto;
+}
+
+img {
+  max-width: 36%;
+}
+
+p {
+  margin: -5px;
+  margin-left: 2px;
+}
+.col-3 img {
+  max-width: 61%;
+}
+
+.Weather .card {
+  width: 19%;
+  display: inline-block;
+  background-color: #d4e4e3;
+  border: none;
+}
+.Weather .card-title {
+  text-align: center;
+  font-size: 19px;
+}
+
+.Weather .card-text {
+  text-align: center;
+  margin-top: 6px;
+  font-size: 11px;
+}
+
+.card-img-top {
+  display: block;
+  margin: auto;
+  width: 36%;
+}
+
+.temperature {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.weather-app-wrapper {
+  max-width: 600px;
+  margin: 30px auto;
+}
+
+.weather-app {
+  padding: 10px;
+  border: 1px solid #b8b9b9;
+}
+
+.description {
+  text-align: left;
+  font-size: 15px;
+  padding-bottom: 60px;
+  padding-left: 1px;
+}
+
+.col-6 ul {
+  margin-left: 18px;
+  font-size: 15px;
+}
+
+.units {
+  position: relative;
+  font-size: 12px;
+  top: -12px;
+}
