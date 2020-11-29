@@ -31,7 +31,11 @@ export default function Weather() {
 
           <small>
             {" "}
-            <a href="https://github.com/MaryRapa/react_app" target="_blank">
+            <a
+              href="https://github.com/MaryRapa/react_app"
+              target="_blank"
+              rel="noreferrer"
+            >
               Open-source code
             </a>
             by Mary Rapa
