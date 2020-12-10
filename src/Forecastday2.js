@@ -1,5 +1,5 @@
 import React from "react";
-import "./Weather.css";
+import "./App.css";
 import sunandcloud from "./images/sunandcloud.jpg";
 
 export default function Forecastday2() {

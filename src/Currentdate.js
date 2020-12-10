@@ -1,5 +1,5 @@
 import React from "react";
-import "./Weather.css";
+import "./App.css";
 import plainsun from "./images/plainsun.jpg";
 
 export default function Currentdate() {

@@ -1,5 +1,5 @@
 import React from "react";
-import "./Weather.css";
+import "./App.css";
 
 import Currentdate from "./Currentdate.js";
 import Forecastday1 from "./Forecastday1.js";
@@ -8,7 +8,7 @@ import Forecastday3 from "./Forecastday3.js";
 import Forecastday4 from "./Forecastday4.js";
 import Forecastday5 from "./Forecastday5.js";
 
-export default function Weather() {
+export default function App() {
   return (
     <div className="Weather">
       <div className="container">
