@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import SetDate from "./SetDate.js";
 import "./App.css";
 
 import Currentdate from "./Currentdate.js";
@@ -16,8 +17,14 @@ export default function App() {
     console.log(response.data);
     setWeatherData({
       ready: true,
-      temperature: response.data.main.temp,
+      temperature: Math.round(response.data.main.temp),
       name: response.data.name,
+      wind: response.data.wind.speed,
+      humidity: response.data.main.humidity,
+      city: response.data.main,
+      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      description: response.data.weather[0].description,
+      date: new Date(response.data.dt * 1000),
     });
   }
 
@@ -35,10 +42,10 @@ export default function App() {
                 />
               </form>
               <h3 id="h3-city">{weatherData.name}</h3>
-              <p id="current-date">Sunday 20 September</p>
+              <SetDate date={weatherData.date} />
               <br />
 
-              <Currentdate />
+              <Currentdate weatherData={weatherData} />
               <Forecastday1 />
               <Forecastday2 />
               <Forecastday3 />

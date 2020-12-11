@@ -2,15 +2,15 @@ import React from "react";
 import "./App.css";
 import plainsun from "./images/plainsun.jpg";
 
-export default function Currentdate() {
+export default function Currentdate(props) {
   return (
     <div className="row">
       <div className="col-3">
-        <img id="icon" src={plainsun} alt="Clear" />
+        <img id="icon" src={props.weatherData.icon} alt="Clear" />
       </div>
       <div className="col-3">
         <span className="temperature" id="temperature">
-          24
+          {props.weatherData.temperature}
         </span>
         <span className="units">
           <a href="/#" id="celsius-link" className="active">
@@ -22,13 +22,13 @@ export default function Currentdate() {
           </a>
         </span>
         <p className="description" id="description">
-          Sunny
+          {props.weatherData.description}
         </p>
       </div>
       <div className="col-6">
         <ul>
-          <li id="wind">Wind: 10 kmh</li>
-          <li id="humidity">Humidity: 10%</li>
+          <li id="wind">Wind: {props.weatherData.wind} kmh</li>
+          <li id="humidity">Humidity: {props.weatherData.humidity} %</li>
         </ul>
       </div>
     </div>
