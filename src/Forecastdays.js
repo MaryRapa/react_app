@@ -8,7 +8,6 @@ export default function Forecastdays(props) {
   const [forecastData, setForecastData] = useState({ ready: false });
 
   function handleResponse(response) {
-    console.log(response.data);
     setForecastData({
       ready: true,
       dayOne: getForecastData(response.data.daily[1]),
@@ -20,7 +19,6 @@ export default function Forecastdays(props) {
   }
 
   if (forecastData.ready) {
-    console.log(forecastData);
     return (
       <div>
         <Forecastday {...forecastData.dayOne} />

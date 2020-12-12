@@ -10,7 +10,6 @@ export default function App() {
   const [weatherData, setWeatherData] = useState({ ready: false });
 
   function handleResponse(response) {
-    console.log(response.data);
     setWeatherData({
       ready: true,
       temperature: Math.round(response.data.main.temp),
@@ -46,20 +45,18 @@ export default function App() {
               <Currentdate weatherData={weatherData} />
               <Forecastdays lat={weatherData.lat} lon={weatherData.lon} />
             </div>
-
-            <small>
-              {" "}
-              <a
-                href="https://github.com/MaryRapa/react_app"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Open-source code
-              </a>
-              by Mary Rapa
-            </small>
           </div>
         </div>
+        <footer>
+          <a
+            href="https://github.com/MaryRapa/react_app"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Open-source code
+          </a>{" "}
+          by Mary Rapa
+        </footer>
       </div>
     );
   } else {
