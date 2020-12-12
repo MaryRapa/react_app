@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-import plainsun from "./images/plainsun.jpg";
 
 export default function Currentdate(props) {
   return (

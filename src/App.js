@@ -4,11 +4,7 @@ import SetDate from "./SetDate.js";
 import "./App.css";
 
 import Currentdate from "./Currentdate.js";
-import Forecastday1 from "./Forecastday1.js";
-import Forecastday2 from "./Forecastday2.js";
-import Forecastday3 from "./Forecastday3.js";
-import Forecastday4 from "./Forecastday4.js";
-import Forecastday5 from "./Forecastday5.js";
+import Forecastdays from "./Forecastdays.js";
 
 export default function App() {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -25,6 +21,8 @@ export default function App() {
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       description: response.data.weather[0].description,
       date: new Date(response.data.dt * 1000),
+      lat: response.data.coord.lat,
+      lon: response.data.coord.lon,
     });
   }
 
@@ -46,11 +44,7 @@ export default function App() {
               <br />
 
               <Currentdate weatherData={weatherData} />
-              <Forecastday1 />
-              <Forecastday2 />
-              <Forecastday3 />
-              <Forecastday4 />
-              <Forecastday5 />
+              <Forecastdays lat={weatherData.lat} lon={weatherData.lon} />
             </div>
 
             <small>
