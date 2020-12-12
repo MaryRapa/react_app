@@ -39,7 +39,7 @@ export default function Forecastdays(props) {
 function getForecastData(response) {
   return {
     date: response.dt,
-    icon: `http://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png`,
+    icon: response.weather[0].icon,
     desc: response.weather[0].description,
     maxTemp: Math.round(response.temp.max),
     minTemp: Math.round(response.temp.min),

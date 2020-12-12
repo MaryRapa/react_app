@@ -1,16 +1,13 @@
 import React from "react";
 import "./App.css";
+import WeatherIcon from "./WeatherIcon";
 
 export default function Forecastday(props) {
   return (
     <div className="card">
       <div className="card-body">
         <h4 className="card-title">{getDayOfWeek(props.date)}</h4>
-        <img
-          src={props.icon}
-          className="card-img-top"
-          alt={props.description}
-        />
+        <WeatherIcon code={props.icon} />
         <p className="card-text">
           <strong>{props.maxTemp}°</strong> <br />
           {props.minTemp}°

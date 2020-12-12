@@ -1,11 +1,12 @@
 import React from "react";
 import "./App.css";
+import WeatherIcon from "./WeatherIcon.js";
 
 export default function Currentdate(props) {
   return (
     <div className="row">
       <div className="col-3">
-        <img id="icon" src={props.weatherData.icon} alt="Clear" />
+        <WeatherIcon code={props.weatherData.icon} />
       </div>
       <div className="col-3">
         <span className="temperature" id="temperature">
