@@ -21,8 +21,8 @@ export default function SetDate(props) {
     minutes = `0${minutes}`;
   }
   return (
-    <div>
+    <h4>
       {day} {hours}:{minutes}
-    </div>
+    </h4>
   );
 }

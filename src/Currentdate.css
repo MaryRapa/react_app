@@ -1,0 +1,18 @@
+.description {
+  text-align: center;
+  font-size: 15px;
+  padding-bottom: 10px;
+  padding-left: 1px;
+}
+
+.temperature {
+  font-size: 35px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.units {
+  position: relative;
+  font-size: 12px;
+  top: -20px;
+}

@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+import "./Currentdate.css";
 import WeatherIcon from "./WeatherIcon.js";
 
 export default function Currentdate(props) {

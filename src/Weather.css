@@ -1,0 +1,55 @@
+.Weather {
+  background-color: #d4e4e3;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #403c3c;
+}
+
+.Weather form {
+  padding: 2%;
+  text-align: center;
+}
+
+.Weather input {
+  width: 300px;
+  height: 30px;
+  text-align: center;
+}
+
+.Weather h3 {
+  padding: 1%;
+  font-size: 1.75rem;
+}
+
+.Weather h4 {
+  padding: 1%;
+  font-size: 1rem;
+}
+
+.Weather datedisplay {
+  padding: 2%;
+}
+
+.col-3 {
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.Weather .card {
+  width: 20%;
+  display: inline-block;
+  background-color: #d4e4e3;
+  text-align: center;
+}
+.Weather .card-title {
+  text-align: center;
+  font-size: 19px;
+}
+
+.Weather .card-text {
+  text-align: center;
+  margin-top: 6px;
+  font-size: 14px;
+}
