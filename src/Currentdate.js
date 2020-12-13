@@ -10,16 +10,7 @@ export default function Currentdate(props) {
       </div>
       <div className="col-3">
         <span className="temperature" id="temperature">
-          {props.weatherData.temperature}
-        </span>
-        <span className="units">
-          <a href="/#" id="celsius-link" className="active">
-            °C
-          </a>{" "}
-          |
-          <a href="/#" id="fahrenheit-link">
-            °F
-          </a>
+          {props.weatherData.temperature}°
         </span>
         <p className="description" id="description">
           {props.weatherData.description}

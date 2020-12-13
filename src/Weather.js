@@ -9,6 +9,7 @@ import Forecastdays from "./Forecastdays.js";
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
+  const [unit, setUnit] = useState(props.defaultUnit);
 
   function handleResponse(response) {
     setWeatherData({
@@ -28,7 +29,7 @@ export default function Weather(props) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    queryApi();
+    queryApi(unit);
   }
 
   function handleCityChange(event) {
@@ -36,9 +37,17 @@ export default function Weather(props) {
     setCity(event.target.value);
   }
 
-  function queryApi() {
+  function handleUnitChange(event) {
+    event.preventDefault();
+    if (event.target.value !== unit) {
+      setUnit(event.target.value);
+      queryApi(event.target.value);
+    }
+  }
+
+  function queryApi(targetUnit) {
     const apiKey = "3154b3b9fa1b9603160b9d7cdb5a315c";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${targetUnit}&appid=${apiKey}`;
     axios.get(apiUrl).then(handleResponse);
   }
 
@@ -52,15 +61,21 @@ export default function Weather(props) {
             placeholder="Enter your city"
             onChange={handleCityChange}
           />
+          <label>Units:</label>
+          <select onChange={handleUnitChange}>
+            <option value="metric">°C</option>
+            <option value="standard">°K</option>
+            <option value="imperial">°F</option>
+          </select>
         </form>
         <h3 id="h3-city">{weatherData.name}</h3>
         <SetDate date={weatherData.date} />
         <Currentdate weatherData={weatherData} />
-        <Forecastdays lat={weatherData.lat} lon={weatherData.lon} />
+        <Forecastdays lat={weatherData.lat} lon={weatherData.lon} unit={unit} />
       </div>
     );
   } else {
-    queryApi();
+    queryApi(unit);
     return "Loading...";
   }
 }
