@@ -26,11 +26,32 @@ export default function Weather(props) {
     });
   }
 
+  function handleSubmit(event) {
+    event.preventDefault();
+    queryApi();
+  }
+
+  function handleCityChange(event) {
+    event.preventDefault();
+    setCity(event.target.value);
+  }
+
+  function queryApi() {
+    const apiKey = "3154b3b9fa1b9603160b9d7cdb5a315c";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+
   if (weatherData.ready) {
     return (
       <div className="Weather">
-        <form id="city-form">
-          <input type="text" id="city-name" placeholder="Enter your city" />
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            id="city-name"
+            placeholder="Enter your city"
+            onChange={handleCityChange}
+          />
         </form>
         <h3 id="h3-city">{weatherData.name}</h3>
         <SetDate date={weatherData.date} />
@@ -39,9 +60,7 @@ export default function Weather(props) {
       </div>
     );
   } else {
-    const apiKey = "3154b3b9fa1b9603160b9d7cdb5a315c";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
-    axios.get(apiUrl).then(handleResponse);
+    queryApi();
     return "Loading...";
   }
 }

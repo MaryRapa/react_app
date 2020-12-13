@@ -9,6 +9,8 @@ export default function Forecastdays(props) {
   function handleResponse(response) {
     setForecastData({
       ready: true,
+      loadedLon: response.data.lon,
+      loadedLat: response.data.lat,
       dayOne: getForecastData(response.data.daily[1]),
       dayTwo: getForecastData(response.data.daily[2]),
       dayThree: getForecastData(response.data.daily[3]),
@@ -17,7 +19,11 @@ export default function Forecastdays(props) {
     });
   }
 
-  if (forecastData.ready) {
+  if (
+    forecastData.ready &&
+    props.lon === forecastData.loadedLon &&
+    props.lat === forecastData.loadedLat
+  ) {
     return (
       <div>
         <Forecastday {...forecastData.dayOne} />
