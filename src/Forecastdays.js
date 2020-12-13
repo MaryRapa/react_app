@@ -36,8 +36,9 @@ export default function Forecastdays(props) {
       </div>
     );
   } else {
-    const apiKey = "3154b3b9fa1b9603160b9d7cdb5a315c";
+    const apiKey = "b4e56dab417f19b51e5410a8604e47cb";
     let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${props.lat}&lon=${props.lon}&exclude=current,minutely,hourly,alerts&appid=${apiKey}&units=${props.unit}`;
+    console.log("querying api.openweathermap.org/data/2.5/onecall");
     axios.get(apiUrl).then(handleResponse);
     return null;
   }
